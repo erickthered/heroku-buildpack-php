@@ -55,6 +55,14 @@ echo "Installing PHP with custom extensions"
 curl -Lo php-5.3.27.tar.bz2 https://s3.amazonaws.com/heroku-erickthered/php-5.3.27.tar.bz2
 tar xjf php-5.3.27.tar.bz2
 
+# update config files
+cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
+cp $LP_DIR/conf/php.ini php
+
+# make php available on bin
+mkdir -p bin
+ln -s /app/php/bin/php bin/php
+
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do
   echo "PassEnv \$var" >> /app/apache/conf/httpd.conf;
