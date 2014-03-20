@@ -38,6 +38,14 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
+MCRYPT_URL="https://heroku-buildpack-php.s3.amazonaws.com/mcrypt-""$MCRYPT_VERSION""$heroku_rev"".tar.gz"
+echo "-----> Bundling mcrypt version $MCRYPT_VERSION"
+curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
+
+APACHE_URL="https://heroku-buildpack-php.s3.amazonaws.com/apache-""$APACHE_VERSION""$heroku_rev"".tar.gz"
+echo "-----> Bundling Apache version $APACHE_VERSION"
+curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
+
 echo "Installing freetds"
 cd /app
 curl -Lo freetds.tar.bz2 https://s3.amazonaws.com/heroku-erickthered/freetds.tar.bz2
