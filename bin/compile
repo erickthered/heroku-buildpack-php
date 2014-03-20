@@ -47,13 +47,10 @@ echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
 echo "Installing freetds"
-cd /app
-curl -Lo freetds.tar.bz2 https://s3.amazonaws.com/heroku-erickthered/freetds.tar.bz2
-tar xjf freetds.tar.bz2
+curl --silent -max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/freetds.tar.bz2" | tar xj
 
 echo "Installing PHP with custom extensions"
-curl -Lo php-5.3.27.tar.bz2 https://s3.amazonaws.com/heroku-erickthered/php-5.3.27.tar.bz2
-tar xjf php-5.3.27.tar.bz2
+curl --silent -max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/php-5.3.27.tar.bz2" | tar xj
 
 # update config files
 mkdir -p /app/apache/conf
