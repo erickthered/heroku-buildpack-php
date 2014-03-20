@@ -46,10 +46,10 @@ APACHE_URL="https://heroku-buildpack-php.s3.amazonaws.com/apache-""$APACHE_VERSI
 echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
-echo "Installing freetds"
+echo "-----> Bundling FreeTDS version 0.9.1"
 curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/freetds.tar.bz2" | tar xj
 
-echo "Installing PHP with custom extensions"
+echo "-----> Bundling PHP with mongo.so, redis.so and pdo_dblib built-in support"
 curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/php-5.3.27.tar.bz2" | tar xj
 
 # update config files
