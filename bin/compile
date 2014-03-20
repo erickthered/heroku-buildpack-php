@@ -44,7 +44,6 @@ curl -Lo freetds.tar.bz2 https://s3.amazonaws.com/heroku-erickthered/freetds.tar
 tar xjf freetds.tar.bz2
 
 echo "Installing PHP with custom extensions"
-mv php php.old
 curl -Lo php-5.3.27.tar.bz2 https://s3.amazonaws.com/heroku-erickthered/php-5.3.27.tar.bz2
 tar xjf php-5.3.27.tar.bz2
 
