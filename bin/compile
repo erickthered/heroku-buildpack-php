@@ -42,7 +42,8 @@ MCRYPT_URL="https://heroku-buildpack-php.s3.amazonaws.com/mcrypt-""$MCRYPT_VERSI
 echo "-----> Bundling mcrypt version $MCRYPT_VERSION"
 curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 
-APACHE_URL="https://heroku-buildpack-php.s3.amazonaws.com/apache-""$APACHE_VERSION""$heroku_rev"".tar.gz"
+#APACHE_URL="https://heroku-buildpack-php.s3.amazonaws.com/apache-""$APACHE_VERSION""$heroku_rev"".tar.gz"
+APACHE_URL="https://s3.amazonaws.com/heroku-erickthered/apache-2.2.27.tar.bz2"
 echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
@@ -50,7 +51,7 @@ echo "-----> Bundling FreeTDS version 0.9.1"
 curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/freetds.tar.bz2" | tar xj
 
 echo "-----> Bundling PHP with mongo.so, redis.so and pdo_dblib built-in support"
-curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/php-5.3.27.tar.bz2" | tar xj
+curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/php-5.3.28.tar.bz2" | tar xj
 
 # update config files
 mkdir -p /app/apache/conf
