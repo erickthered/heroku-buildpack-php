@@ -41,7 +41,7 @@ fi
 #MCRYPT_URL="https://heroku-buildpack-php.s3.amazonaws.com/mcrypt-""$MCRYPT_VERSION""$heroku_rev"".tar.gz"
 MCRYPT_URL="https://s3.amazonaws.com/heroku-erickthered/mcrypt-2.5.8.tar.bz2"
 echo "-----> Bundling mcrypt version $MCRYPT_VERSION"
-curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
+curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xj
 
 #APACHE_URL="https://heroku-buildpack-php.s3.amazonaws.com/apache-""$APACHE_VERSION""$heroku_rev"".tar.gz"
 APACHE_URL="https://s3.amazonaws.com/heroku-erickthered/apache-2.2.27.tar.bz2"
