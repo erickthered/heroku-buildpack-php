@@ -45,7 +45,7 @@ curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 #APACHE_URL="https://heroku-buildpack-php.s3.amazonaws.com/apache-""$APACHE_VERSION""$heroku_rev"".tar.gz"
 APACHE_URL="https://s3.amazonaws.com/heroku-erickthered/apache-2.2.27.tar.bz2"
 echo "-----> Bundling Apache version $APACHE_VERSION"
-curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
+curl --silent --max-time 60 --location "$APACHE_URL" | tar xj
 
 echo "-----> Bundling FreeTDS version 0.9.1"
 curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/freetds.tar.bz2" | tar xj
