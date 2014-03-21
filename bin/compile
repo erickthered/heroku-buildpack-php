@@ -57,6 +57,7 @@ curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthe
 mkdir -p /app/apache/conf
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
 cp $LP_DIR/conf/php.ini php
+cp $LP_DIR/conf/freetds.conf freetds/etc
 
 # make php available on bin
 mkdir -p bin
