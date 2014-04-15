@@ -13,9 +13,9 @@ heroku_rev='-2'
 
 # config
 MCRYPT_VERSION="2.5.8"
-APACHE_VERSION="2.2.25"
+APACHE_VERSION="2.2.7"
 APACHE_PATH="apache"
-PHP_VERSION="5.3.27"
+PHP_VERSION="5.3.28"
 PHP_PATH="php"
 
 BIN_DIR=$(dirname $0)
@@ -51,7 +51,7 @@ curl --silent --max-time 60 --location "$APACHE_URL" | tar xj
 echo "-----> Bundling FreeTDS version 0.9.1"
 curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/freetds-0.9.1.tar.bz2" | tar xj
 
-echo "-----> Bundling PHP with mongo.so, redis.so and pdo_dblib built-in support"
+echo "-----> Bundling PHP version 5.3.28 with apc.so mongo.so, redis.so and pdo_dblib built-in support"
 curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/php-5.3.28.tar.bz2" | tar xj
 
 # update config files

@@ -15,7 +15,7 @@ This buildpack is currently composed of:
 * libmcrypt 2.5.8 (from heroku-buildpack-php)
 
 pdo_lib has been statically linked to PHP, and you can also
-use mongo and/or redis by adding the following likes to php.ini
+use mongo and/or redis by adding the following lines to php.ini
 in your application main directory:
 
 	extension.so
