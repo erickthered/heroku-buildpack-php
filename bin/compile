@@ -55,7 +55,7 @@ echo "-----> Bundling libJPEG version 8-d"
 curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/jpeg-8d.tar.bz2" | tar xj
 
 echo "-----> Bundling PHP version 5.3.29 with apc.so mongo.so, redis.so and pdo_dblib built-in support"
-curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/php-5.3.28.tar.bz2" | tar xj
+curl --silent --max-time 60 --location "https://s3.amazonaws.com/heroku-erickthered/php-5.3.29.tar.bz2" | tar xj
 
 # update config files
 mkdir -p /app/apache/conf
